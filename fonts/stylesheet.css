@@ -1,0 +1,44 @@
+@font-face {
+    font-family: 'Prototype 2197';
+    src: url('2197-Heavy.woff2') format('woff2'),
+        url('2197-Heavy.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'FX300 Angular';
+    src: url('FX300-Angular.woff2') format('woff2'),
+        url('FX300-Angular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Prototype FX300';
+    src: url('FX300.woff2') format('woff2'),
+        url('FX300.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Prototype 2197 Block';
+    src: url('2197-Block.woff2') format('woff2'),
+        url('2197-Block.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'OCR-A';
+    src: url('OCR-A.woff2') format('woff2'),
+        url('OCR-A.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
