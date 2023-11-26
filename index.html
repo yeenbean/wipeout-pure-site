@@ -10,6 +10,12 @@
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
     <meta http-equiv="Pragma" content="no-cache" />
     <meta http-equiv="Expires" content="0" />
+
+    <!-- Preloading -->
+    <link rel="preload" href="fonts/OCR-A.woff" as="font" type="font/woff" crossorigin>
+    <link rel="preload" href="fonts/OCR-A.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/FX300-Angular.woff" as="font" type="font/woff" crossorigin>
+    <link rel="preload" href="fonts/FX300-Angular.woff2" as="font" type="font/woff2" crossorigin>
 </head>
 
 <body>
@@ -18,35 +24,41 @@
         <source src="audio/curvesloop.mp3">
     </audio>
 
-    <!-- Main page -->
-    <div id="margins">
-        <div id="entry">
-            <a class="super-centered body-font" href="#" onclick="gotoMainMenuFirstTime()">Enter</a>
+    <div class="virtual-screen">
+        <div class="preload-frame" id="preload">
+            <div class="preload-top-bar"></div>
+            <p class="fx300 preload-text">
+                This site is still under heavy development. Regrettably this
+                site is best enjoyed in a Chromium-based browser. This is mainly
+                due to Firefox's font rendering engine although cross-browser
+                support is still in development.
+            </p>
+            <div class="preload-bottom-bar"></div>
+            <a href="#" class="preload-confirm fx300" onclick="gotoMainMenuFirstTime()">Click here to continue</a>
         </div>
-        <div id="main-menu">
-            <img class="header-bg" src="img/header-bg.png">
-            <img class="header-arrow" src="img/header-arrow.png">
-            <!-- page title, subtitle, hero, image, etc -->
-            <!-- <img class="pfp" src="https://avatars.githubusercontent.com/u/7747985" alt="a picture of this yeen"> -->
-            <h1 class="blinker">Main Menu</h1>
+        <div class="menu-frame" id="main-menu">
+            <!-- Header content -->
+            <div class="header-image"></div>
+            <h1 class="header-text fx300">Main Menu</h1>
 
-            <!-- page content -->
-            <ul class="body-font">
-                <li><a href="#">PSP Resources</a></li>
-                <li><a href="#">PC Emulation Resources</a></li>
-                <li><a href="#">About Me</a></li>
-            </ul>
-
-            <div class="footer-container">
-                <div class="footer-top">
-                    <img class="footer-left-arrow" src="img/footer-arrow.png">
-                    <div class="footer-right-border" id="top-border"></div>
-                </div>
-                <p class="footer-info-message">SELECT AN ITEM FROM THE MENU<span class="blinker"></span></p>
-                <div class="footer-bottom">
-
-                </div>
+            <!-- Body content -->
+            <div class="body-frame">
+                <ul class="fx300">
+                    <li><a href="#">Single Player</a></li>
+                    <li><a href="#">Multiplayer</a></li>
+                    <li><a href="#">Profile</a></li>
+                    <li><a href="#">Download</a></li>
+                </ul>
             </div>
+
+            <!-- Footer content -->
+            <img class="footer-header-arrow" src="img/footer-arrow.png">
+            <div class="footer-top-border"></div>
+            <div class="ocr-a footer-text">You know where you are with a Feisar
+                and this year is no exception. The new beast is a typical
+                benchmark combination of agility and reliability.
+            </div>
+            <div class="footer-bottom-border"></div>
         </div>
     </div>
 </body>

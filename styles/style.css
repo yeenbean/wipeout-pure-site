@@ -1,192 +1,235 @@
+/* || CSS Reset */
 * {
-    /* Uncomment the line below for div debugging. */
-    /* outline: 1px solid orange; */
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin-block-end: 0;
+}
 
-/* Pages */
-
-#entry {
-    visibility: visible;
+/* || Pages */
+#preload {
+    display:block;
 }
 
 #main-menu {
-    visibility: hidden;
+    display: none;
 }
 
-img.header-bg {
-    margin: 0;
-    padding: 0;
-    position: absolute;
-    top: 0;
-    display: block;
+/* || Typography */
+
+.ocr-a {
+    font-family: "OCR-A";
 }
 
-img.header-arrow {
-    margin: 0;
-    padding: 0;
-    position: relative;
-    top: 32px;
-    left: 443px;
-    display: block;
+.fx300 {
+    font-family: "FX300 Angular";
 }
 
-.super-centered {
-    margin: 0;
-    position: absolute;
-    top: 127px;
-    left: 50%;
-    transform: translate(-50%);
+/* || Full doc */
+
+body {
+    background-color: #efefef;
+    text-rendering:geometricPrecision;
 }
 
 a {
-    color: inherit;
     text-decoration: none;
 }
 
-html {
-    background-color: #efefef;
+a:visited {
+    color: inherit;
 }
 
-body {
-    background-color: #ffffff;
-    min-width: 480px;
+/* This defines the virtual viewframe. Applied on the body element since we
+   never want content to fall outside of this frame. */
+.virtual-screen {
+    /* Define size to be strictly the size of the PSP. */
+    width: 480px;
     max-width: 480px;
-    min-height: 272px;
+    height: 272px;
     max-height: 272px;
+
+    /* Use soft bg color to frame content. */
+    background-color: #ffffff;
+
+    /* Center virtual screen. */
     margin: auto;
 }
 
-.blinker:after {
-    content: '_';
-    display: inline-block;
-    animation: blink 1s step-start 0s infinite;
+/* This section defines our margin options. Most content will use the
+   menu-frame class. */
+.menu-frame {
+    position: relative;
+    margin-left: 21px;
+    /* margin-right: 25; */
+    background-color: #ffffff;
 }
 
-@keyframes blink {
-    50% {
-        opacity: 0;
-    }
+.preload-frame {
+    position: relative;
+    margin-left: 15px;
+    margin-right: 30px;
+    min-height: 100%;
 }
 
-#margins {
-    padding-top: 10px;
-    padding-left: 21px;
-    padding-right: 11px;
+/* || Header */
+
+/* Preload */
+
+.preload-top-bar {
+    content: " ";
+    min-width: 480px;
+    border-bottom: 1px #127AA1 solid;
+    position: absolute;
+    top: 10px;
+    left: -15px;
 }
 
-h1 {
-    margin: 0 0 11px 0;
-    padding: 0;
-    text-align: left;
-    font-family: "FX300 Angular", sans-serif;
+/* Main */
+
+.header-image {
+    position: absolute;
+    top: 0px;
+    left: 1px;
+    display: block;
+    background-image: url("../img/header-bg.png");
+    width: 300px;
+    height: 17px;
+}
+
+h1.header-text {
+    position: absolute;
+    top: 21px;
     font-size: 11px;
     letter-spacing: 1px;
-    color: #EE579F;
-    border-bottom: 2px solid #5FDBF6;
+    color: #EE569E;
+    display: block;
 }
 
-p {
-    padding: 0;
-    margin: 0;
-    font-family: "FX300 Angular", serif;
-    font-size: 13px;
-    letter-spacing: 1px;
-    line-height: 18px;
-    color: #1FB1D2;
+h1.header-text::before {
+    content: " ";
+    min-width: 448px;
+    border-bottom: 2px #5FDBF6 solid;
+    position: absolute;
+    top: 17px;
+    left: -1px;
 }
 
-.body-font {
-    font-family: "FX300 Angular", serif;
-    font-size: 13px;
+/* || Body */
+
+/* Basic text elements */
+div.body-frame {
+    position: absolute;
+    top: 51px;
+}
+
+p.preload-text {
+    position: absolute;
+    color: #0AB1EF;
+    top: 99px;
+    font-size: 9px;
+    line-height: 16px;
     letter-spacing: 1px;
-    line-height: 18px;
-    color: #1FB1D2;
+    font-weight:normal;
 }
 
 ul {
-    margin: 0;
-    padding: 0;
-    color: #1FB1D2;
+    color: #17AED1;
     list-style-type: none;
+    font-size: 13px;
+    letter-spacing: 1px;
+    line-height: 17px;
 }
-ul li{
+
+ul li {
     opacity: 0.5;
 }
-ul li:hover{
-    opacity: 1;
-    /* list-style-type:unset; */
-    list-style-image: url("../img/link-list-arrow.png");
-}
-.pfp {
-    margin: 0 auto;
-    display: block;
-    width: 100px;
-    height: auto;
-    border-radius: 100%;
+
+ul li:hover {
+    opacity: 1.0;
+    list-style-image: url(../img/link-list-arrow.png);
 }
 
-/* footer block */
-.footer-container {
-    /* defines the entire footer container */
+/* || Footer */
+
+/* Preload */
+
+.preload-bottom-bar {
+    content: " ";
+    min-width: 480px;
+    border-bottom: 1px #127AA1 solid;
     position: absolute;
-    top: 220px;
-    margin: 0;
-    padding: 0;
-    display: block;
-    width: 448px;
+    top: 240px;
+    left: -15px;
 }
 
-div.footer-top {
-    position: relative;
-    top: -5px;
-    min-height: 4px;
-    max-height: 4px;
-    min-width: 448px;
+a.preload-confirm {
+    position: absolute;
+    color: #127AA1;
+    top: 245px;
+    font-size: 9px;
+    /* line-height: 8px; */
+    letter-spacing: 1px;
+    font-weight:normal;
 }
 
-div.footer-right-border {
+/* Main */
+
+.footer-header-arrow {
+    position: absolute;
+    top: 215px;
+}
+
+div.footer-top-border {
     background: repeating-linear-gradient(to right, #5FDBF6 0px, #5FDBF6 6px, transparent 6px, transparent 8px);
     width: 440px;
     height: 1px;
-    margin-top: -1px;
-    margin-left: 7px;
+    position: absolute;
+    top: 218px;
+    left: 7px;
 }
-div.footer-right-border:before{
+
+div.footer-top-border::before {
     content: " ";
-    width:1px;
-    height:1px;
+    width: 1px;
+    height: 1px;
     background-color: #5FDBF6;
     position: absolute;
-    top:1px;
-}
-
-
-img.footer-left-arrow {
-    /* defines the footer's arrow */
     display: block;
+    top: -2px;
 }
 
-p.footer-info-message {
-    position: relative;
-    top: -5px;
-    padding: 1px 0 0 0;
-    margin: 0;
-    font-family: "OCR-A", serif;
+.footer-text {
+    position: absolute;
+    top: 220px;
+    max-width: 443px;
     font-size: 10px;
+    font-family: "OCR-A", serif;
     letter-spacing: 2px;
     line-height: 10px;
+    font-optical-sizing: auto;
+    text-transform: uppercase;
     color: #FAB929;
 }
-p.footer-info-message span{
-    position: relative;
-    top: 3px;
 
-}
-
-div.footer-bottom {
+.footer-bottom-border {
     position: absolute;
-    top: 251;
-    width: 440px;
-    box-shadow: #5FDBF6 solid;
+    display: block;
+    top: 251px;
+    background-image: url("../img/footer-bottom.png");
+    width: 444px;
+    height: 21px;
 }
