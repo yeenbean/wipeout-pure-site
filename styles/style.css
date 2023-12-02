@@ -164,6 +164,10 @@ ul li:hover {
     list-style-image: url(../img/link-list-arrow.png);
 }
 
+ul li a {
+    display: block;
+}
+
 /* || Footer */
 
 /* Preload */
